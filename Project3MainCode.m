@@ -26,3 +26,6 @@ powerpiston = powerpistonsetup(displacer);
 flywheel = flywheelsetup();
 powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
+powerpiston = VolumePowerPiston(powerpiston,displacer);
+powerpiston = massCalc(powerpiston);
+
