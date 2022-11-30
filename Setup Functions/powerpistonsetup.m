@@ -16,7 +16,7 @@ function [powerpiston] = powerpistonsetup(displacer)
 %   
 %   powerpiston.crank.length = crank length of power piston
 %   powerpiston.crod.length= connecting rod length
-%   powerpiston.crank.angle = angle of the 
+%   powerpiston.crank.angle = angle of the crank for the power piston
 %   
 %  
 % FUNCTIONS CALLED
@@ -29,6 +29,10 @@ powerpiston.crod.length = 0.046; % [m] (r_AB)
 powerpiston.crank.angle = (displacer.crank.angle+(90*(pi/180))); % (accounting for phaseshift)
 powerpiston.diameter = 0.07; % [m]
 powerpiston.crank.vector = powerpiston.crank.length*(cos(powerpiston.crank.angle)+ 1i*sin(powerpiston.crank.angle));
+powerpiston.temp = 300; % [K]
+powerpiston.pressureBDC = 500*1000; % [Pa]
+
+powerpiston = PosVelAccelAnalysis(powerpiston);
 
 
 
