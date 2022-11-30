@@ -23,9 +23,11 @@ theta = 0:0.0174533:(360*(pi/180));
 
 displacer = displacersetup(theta);
 powerpiston = powerpistonsetup(displacer);
+regenerator = regeneratorsetup();
 flywheel = flywheelsetup();
 powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
 powerpiston = VolumePowerPiston(powerpiston,displacer);
 powerpiston = massCalc(powerpiston);
+
 

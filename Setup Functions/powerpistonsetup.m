@@ -32,7 +32,7 @@ powerpiston.crank.vector = powerpiston.crank.length*(cos(powerpiston.crank.angle
 powerpiston.temp = 300; % [K]
 powerpiston.pressureBDC = 500*1000; % [Pa]
 
-powerpiston = PosVelAccelAnalysis(powerpiston);
+
 
 
 

@@ -29,6 +29,7 @@ displacer.volume = 0; % [m^2] (V_disp)
 displacer.crank.angle = theta;
 displacer.diameter = 0.07; % [m]
 displacer.crank.vector = displacer.crank.length*(cos(displacer.crank.angle)+ 1i*sin(displacer.crank.angle));
+displacer.temp = 900; % [k]
 
 end
 

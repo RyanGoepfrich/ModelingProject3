@@ -2,7 +2,8 @@ function [slidermech] = massCalc(slidermech)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: massCalc
 %
-%  PURPOSE: Calc the mass of the 
+%  PURPOSE: Calc the mass of working fluid for both the displacer and
+%  Power Piston. (Not for the regeneratorm solved in the setup process)
 %
 %  INPUT
 %
