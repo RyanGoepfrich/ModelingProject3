@@ -27,7 +27,7 @@ delta_V = (max(displacer.S)-min(displacer.S))*pi*(displacer.diameter/2)^2;
 
 displacer.volumeBDC = ((C_R*delta_V)/(1-C_R));
 displacer.volumeTDC = (delta_V-displacer.volumeBDC);
-C_R2 = displacer.volumeBDC/displacer.volumeTDC;
+
 
 
 y = length(displacer.crank.angle);
