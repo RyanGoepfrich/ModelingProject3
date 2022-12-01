@@ -26,7 +26,7 @@ function [powerpiston] = powerpistonsetup(displacer)
 
 powerpiston.crank.length = 0.0138; % [m] (r_OaA)
 powerpiston.crod.length = 0.046; % [m] (r_AB)
-powerpiston.crank.angle = (displacer.crank.angle+(90*(pi/180))); % (accounting for phaseshift)
+powerpiston.crank.angle = (displacer.crank.angle+deg2rad(90)); % (accounting for phaseshift)
 powerpiston.diameter = 0.07; % [m]
 powerpiston.crank.vector = powerpiston.crank.length*(cos(powerpiston.crank.angle)+ 1i*sin(powerpiston.crank.angle));
 powerpiston.temp = 300; % [K]

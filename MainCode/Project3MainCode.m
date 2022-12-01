@@ -18,16 +18,32 @@
 %
 %  START OF EXECUTABLE CODE
 %
+theta = 0: deg2rad(1):deg2rad(1440);
+theta2 = 0: 1: 1440;
 
-theta = 0:0.0174533:(360*(pi/180));
-
+%% Set-Up functions
 displacer = displacersetup(theta);
 powerpiston = powerpistonsetup(displacer);
 regenerator = regeneratorsetup();
 flywheel = flywheelsetup();
+
+%% Position, Velc, Accel Calcs
 powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
+
+%% Volume Calcs (Note: Regenerator calc is done in setup) 
 powerpiston = VolumePowerPiston(powerpiston,displacer);
+displacer = VolumeDisplacer(displacer);
+
+
+%% Mass Calcs (Note: Regenerator calc is done in setup) 
 powerpiston = massCalc(powerpiston);
+
+%% Torque Calcs
+
+%% DONT KNOW WHAT ELSE IS NEEDED
+hold on
+
+plot(theta2,displacer.volume)
 
 
