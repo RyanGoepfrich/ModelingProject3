@@ -41,9 +41,7 @@ powerpiston = massCalc(powerpiston);
 
 %% Torque Calcs
 
-%% DONT KNOW WHAT ELSE IS NEEDED
-hold on
+%% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
 
-plot(theta2,displacer.volume)
 
 
