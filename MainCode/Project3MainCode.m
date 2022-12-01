@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: Project3MainCode
 %
-%  PURPOSE - 
+%  PURPOSE - test
 %
 %  INPUT -
 %
