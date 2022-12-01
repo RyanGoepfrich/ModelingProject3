@@ -18,7 +18,7 @@
 %
 %  START OF EXECUTABLE CODE
 %
-% Pushing Test 2
+% Pushing Test 3
 %
 theta = 0: deg2rad(1):deg2rad(1440);
 theta2 = 0: 1: 1440;
