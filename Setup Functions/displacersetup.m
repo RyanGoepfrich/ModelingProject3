@@ -1,4 +1,4 @@
-function [displacer] = displacersetup(theta)
+function [displacer] = displacersetup(powerpiston)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: powerpistonsetup
 %
@@ -26,10 +26,12 @@ function [displacer] = displacersetup(theta)
 displacer.crank.length = 0.0138; % [m] (r_OaC)
 displacer.crod.length = 0.0705; % [m] (r_CD)
 displacer.volume = 0; % [m^2] (V_disp)
-displacer.crank.angle = theta;
+displacer.crank.angle = powerpiston.crank.angle+deg2rad(90);
 displacer.diameter = 0.07; % [m]
 displacer.crank.vector = displacer.crank.length*(cos(displacer.crank.angle)+ 1i*sin(displacer.crank.angle));
 displacer.temp = 900; % [k]
+displacer.area = pi*(displacer.diameter/2)^2;
+displacer.pressureBDC = 500*1000; % [Pa]
 
 end
 

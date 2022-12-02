@@ -24,7 +24,7 @@ function [powerpiston] = VolumePowerPiston(powerpiston,displacer)
 
 distancebetween = abs(displacer.S-powerpiston.S);
 
-powerpiston.volume = pi*(powerpiston.diameter/2)^2*distancebetween;
+powerpiston.volume = powerpiston.area*distancebetween;
 
 
 

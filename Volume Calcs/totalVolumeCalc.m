@@ -1,4 +1,4 @@
-function [displacer] = VolumeDisplacer(displacer,heightmax)
+function [VolumeTotal] = totalVolumeCalc(displacer,powerpiston,regenerator)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: 
 %
@@ -20,8 +20,6 @@ function [displacer] = VolumeDisplacer(displacer,heightmax)
 %  START OF EXECUTABLE CODE
 %
 
-displacer.volume = (heightmax-displacer.S)*displacer.area;
+VolumeTotal = displacer.volume+powerpiston.volume+regenerator.volume;
 end
-
-
 
