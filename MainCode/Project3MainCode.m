@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: Project3MainCode
 %
-%  PURPOSE - test2
+%  PURPOSE - 
 %
 %  INPUT - 
 %
@@ -18,7 +18,7 @@
 %
 %  START OF EXECUTABLE CODE
 %
-theta = deg2rad(0): deg2rad(1):deg2rad(360); % Starting at bottom dead center
+theta = deg2rad(-90): deg2rad(1):deg2rad(270); 
 theta2 = 0: 1: 360;
 C_R = 1.58;
 
@@ -33,15 +33,16 @@ powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
 
 %% Volume Calcs (Note: Regenerator calc is done in setup)
-heightmax = hcalc(powerpiston,regenerator,C_R);
+total.heightmax = hcalc(powerpiston,regenerator,C_R);
 powerpiston = VolumePowerPiston(powerpiston,displacer);
-displacer = VolumeDisplacer(displacer,heightmax);
+displacer = VolumeDisplacer(displacer,total);
 total.Volume = totalVolumeCalc(displacer,powerpiston,regenerator);
 
 
 %% Mass Calcs (Note: Regenerator calc is done in setup) 
 powerpiston = massCalcPiston(powerpiston);
 displacer = massCalcDisplacer(displacer);
+total.mass = totalMassCalc(powerpiston,displacer,regenerator);
 
 %% Torque Calcs
 

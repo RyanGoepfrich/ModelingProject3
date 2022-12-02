@@ -1,4 +1,4 @@
-function [displacer] = VolumeDisplacer(displacer,heightmax)
+function [displacer] = VolumeDisplacer(displacer,total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: 
 %
@@ -20,7 +20,7 @@ function [displacer] = VolumeDisplacer(displacer,heightmax)
 %  START OF EXECUTABLE CODE
 %
 
-displacer.volume = (heightmax-displacer.S)*displacer.area;
+displacer.volume = (total.heightmax-displacer.S)*displacer.area;
 end
 
 

@@ -1,24 +1,23 @@
 function [slidermech] = massCalcDisplacer(slidermech)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME: massCalc
+%  FUNCTION NAME: massCalcDisplacer
 %
-%  PURPOSE: Calc the mass of working fluid for both the displacer and
-%  Power Piston. (Not for the regeneratorm solved in the setup process)
+%  PURPOSE:
 %
-%  INPUT
+%  INPUT:
 %
-%  OUTPUT
+%  OUTPUT:
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  AUTHOR: Ryan Goepfrich
-%  DATE: 11/30/22
+%  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
+%  DATE: 12/1/22
 %
-%  DESCRIPTION OF LOCAL VARIABLES
+%  DESCRIPTION OF LOCAL VARIABLES:
 %
-%  FUNCTIONS CALLED
+%  FUNCTIONS CALLED:
+%
 %
 %  START OF EXECUTABLE CODE
-%
 
 R = 287; % [J/kgK]
 y = length(slidermech.crank.angle);

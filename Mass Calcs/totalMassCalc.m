@@ -1,6 +1,6 @@
-function [  ]  = fncname( )
+function [totalmass] = totalMassCalc(powerpiston,displacer,regenerator)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME:
+%  FUNCTION NAME: totalMassCalc
 %
 %  PURPOSE:
 %
@@ -18,6 +18,6 @@ function [  ]  = fncname( )
 %
 %
 %  START OF EXECUTABLE CODE
-
-
+totalmass = powerpiston.mass+displacer.mass+regenerator.mass;
 end
+
