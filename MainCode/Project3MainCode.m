@@ -18,8 +18,8 @@
 %
 %  START OF EXECUTABLE CODE
 %
-theta = deg2rad(-90): deg2rad(1):deg2rad(270); 
-theta2 = 0: 1: 360;
+theta = deg2rad(0): deg2rad(1):deg2rad(1440); 
+theta2 = 0: 1: 1440;
 C_R = 1.58;
 
 %% Set-Up functions
@@ -31,22 +31,29 @@ flywheel = flywheelsetup();
 %% Position, Velc, Accel Calcs
 powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
+total.heightmax = hcalc(powerpiston,regenerator,C_R);
 
 %% Volume Calcs (Note: Regenerator calc is done in setup)
-total.heightmax = hcalc(powerpiston,regenerator,C_R);
 powerpiston = VolumePowerPiston(powerpiston,displacer);
 displacer = VolumeDisplacer(displacer,total);
-total.Volume = totalVolumeCalc(displacer,powerpiston,regenerator);
-
 
 %% Mass Calcs (Note: Regenerator calc is done in setup) 
 powerpiston = massCalcPiston(powerpiston);
 displacer = massCalcDisplacer(displacer);
 total.mass = totalMassCalc(powerpiston,displacer,regenerator);
 
+%% Total Volume Calc.
+[total.volume,total.specificvolume] = totalVolumeCalc(displacer,powerpiston,regenerator,total);
+
+%% Pressure Calc.
+total.pressure = pressurecalc(total,powerpiston,displacer,regenerator);
+
 %% Torque Calcs
 
+%% Graphing Functions
+specificvolumevsPressureGraph(total)
+
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
-hold on
-plot(theta2,displacer.volume,'g',theta2,powerpiston.volume,'c',theta2,total.Volume,'m')
-yline(regenerator.volume,'r')
+
+
+

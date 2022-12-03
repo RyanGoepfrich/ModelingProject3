@@ -1,4 +1,4 @@
-function [VolumeTotal] = totalVolumeCalc(displacer,powerpiston,regenerator)
+function [VolumeTotal,SpecificVolume] = totalVolumeCalc(displacer,powerpiston,regenerator,total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: 
 %
@@ -21,5 +21,7 @@ function [VolumeTotal] = totalVolumeCalc(displacer,powerpiston,regenerator)
 %
 
 VolumeTotal = displacer.volume+powerpiston.volume+regenerator.volume;
+SpecificVolume = VolumeTotal/total.mass;
+
 end
 
