@@ -1,4 +1,4 @@
-function [TorqueAvg]  = calcTorqueAvg(total)
+function [torqueAvg]  = calcTorqueAvg(total,theta)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME:
 %
@@ -18,7 +18,7 @@ function [TorqueAvg]  = calcTorqueAvg(total)
 %
 %
 %  START OF EXECUTABLE CODE
-TorqueAvg = max(total.Torque) - min(total.torque);
+torqueAvg = (1/(2*pi))*trapz(theta,total.torque);
 
 end
 

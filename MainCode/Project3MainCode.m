@@ -51,6 +51,7 @@ total.pressure = pressurecalc(total,powerpiston,displacer,regenerator);
 %% Torque Calcs
 total.force = forcecalc(total,powerpiston);
 total.torque = calcTorque(total.force, powerpiston);
+total.torqueAvg = calcTorqueAvg(total, theta);
 
 %% Graphing Functions
 close all
@@ -62,6 +63,7 @@ plot(theta2,total.force)
 figure('name', 'Torque vs. crank angle')
 plot(theta2, total.torque)
 yline(0)
+yline(total.torqueAvg);
 xlabel('Crank angle [deg]')
 ylabel('Torque [Nm]')
 
