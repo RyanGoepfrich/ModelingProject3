@@ -50,12 +50,20 @@ total.pressure = pressurecalc(total,powerpiston,displacer,regenerator);
 
 %% Torque Calcs
 total.force = forcecalc(total,powerpiston);
-
+total.torque = calcTorque(total.force, powerpiston);
 
 %% Graphing Functions
+close all
 specificvolumevsPressureGraph(total)
 
-plot (theta2,total.force)
+figure(1)
+plot(theta2,total.force)
+
+figure('name', 'Torque vs. crank angle')
+plot(theta2, total.torque)
+yline(0)
+xlabel('Crank angle [deg]')
+ylabel('Torque [Nm]')
 
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
 
