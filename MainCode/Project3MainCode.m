@@ -79,6 +79,7 @@ ylabel('Torque [Nm]')
 total.KE = calcKE(theta, total);
 total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
+flywheel.diameter = calcD(flywheel);
 
 
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
