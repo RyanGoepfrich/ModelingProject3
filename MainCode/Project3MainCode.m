@@ -18,8 +18,8 @@
 %
 %  START OF EXECUTABLE CODE
 %
-theta = deg2rad(0): deg2rad(1):deg2rad(1440); 
-theta2 = 0: 1: 1440;
+theta = deg2rad(0): deg2rad(1):deg2rad(360); 
+theta2 = 0: 1: 360;
 C_R = 1.58;
 
 %% Set-Up functions
@@ -49,9 +49,12 @@ total.mass = totalMassCalc(powerpiston,displacer,regenerator);
 total.pressure = pressurecalc(total,powerpiston,displacer,regenerator);
 
 %% Torque Calcs
+total.force = forcecalc(total,powerpiston);
 
 %% Graphing Functions
 specificvolumevsPressureGraph(total)
+
+plot (theta2,total.force)
 
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
 
