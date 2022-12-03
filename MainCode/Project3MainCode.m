@@ -63,7 +63,7 @@ plot(theta2,total.force)
 figure('name', 'Torque vs. crank angle')
 plot(theta2, total.torque)
 yline(0)
-yline(total.torqueAvg);
+yline(total.torqueAvg, 'color', 'r')
 xlabel('Crank angle [deg]')
 ylabel('Torque [Nm]')
 
