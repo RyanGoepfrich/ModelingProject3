@@ -1,4 +1,4 @@
-function [KE]  = calcThetas(theta, total)
+function [KE]  = calcKE(theta, total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME:
 %

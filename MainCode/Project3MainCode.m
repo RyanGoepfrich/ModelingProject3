@@ -60,6 +60,7 @@ disp('Power1')
 disp(total.power1)
 disp('Power2')
 disp(total.power2)
+
 %% Graphing Functions
 close all
 specificvolumevsPressureGraph(total)
@@ -73,6 +74,12 @@ yline(0)
 yline(total.torqueAvg, 'color', 'r')
 xlabel('Crank angle [deg]')
 ylabel('Torque [Nm]')
+
+%% Determine KE and I
+total.KE = calcKE(theta, total);
+total.cf = 0.002;
+flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
+
 
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
 
