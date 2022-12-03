@@ -1,4 +1,4 @@
-function power1 = PowerMethod1(total)
+function [power1,omega] = PowerMethod1(total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME:
 %
@@ -21,7 +21,7 @@ function power1 = PowerMethod1(total)
 
 omega = 2000;                   % Average rotational velocity [rpm]
 
-work = int(total.pressure,total.specificvolume,0,2*pi);
+work = trapz(total.specificvolume,total.pressure);
 
 power1 = work*omega/60;
 end
