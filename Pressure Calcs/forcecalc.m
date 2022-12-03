@@ -19,7 +19,7 @@ function [force] = forcecalc(total,powerpiston)
 %
 %  START OF EXECUTABLE CODE
 
-force = total.pressure/(powerpiston.area);
+force = (total.pressure-101300)*(powerpiston.area);
 
 end
 
