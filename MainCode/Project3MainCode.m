@@ -53,11 +53,18 @@ total.force = forcecalc(total,powerpiston);
 total.torque = calcTorque(total.force, powerpiston);
 total.torqueAvg = calcTorqueAvg(total, theta);
 
+%% Power Calcs
+[total.power1,total.omegaAvg] = PowerMethod1(total);
+total.power2 = PowerMethod2(total);
+disp('Power1')
+disp(total.power1)
+disp('Power2')
+disp(total.power2)
 %% Graphing Functions
 close all
 specificvolumevsPressureGraph(total)
 
-figure(1)
+figure()
 plot(theta2,total.force)
 
 figure('name', 'Torque vs. crank angle')
