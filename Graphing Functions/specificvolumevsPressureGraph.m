@@ -14,9 +14,25 @@ function []  = specificvolumevsPressureGraph(total)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
+%   Tv1: creates an array of a constant high temperature over all specific
+%   volumes
+%   Tv2: creates an array of the low temperature over all specific volumes
+%   Vv1: creates an array between the lowest specific volume and the
+%   highest specific volume
+%   R: Universal gas constant [K/kg-K]
+%   p: Anonymous function that links to the Temp and volume, assuming the
+%   ideal gas law
 %
 %  FUNCTIONS CALLED:
-%
+%   figure
+%   plot
+%   hold
+%   legend
+%   grid
+%   xlabel
+%   ylabel
+%   xlim
+%   title
 %
 %  START OF EXECUTABLE CODE
 
@@ -25,7 +41,7 @@ Tv1 = linspace(900, 900, length(total.specificvolume));
 Tv2 = linspace(300, 300, length(total.specificvolume));
 Vv1 = linspace(min(total.specificvolume), max(total.specificvolume), length(total.specificvolume));
 
-R = 278;
+R = 287;
 
 
 p = @(T,V) R*T./V;
