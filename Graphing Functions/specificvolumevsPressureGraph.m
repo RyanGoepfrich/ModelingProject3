@@ -1,12 +1,13 @@
 function []  = specificvolumevsPressureGraph(total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME:
+%  FUNCTION NAME: specificvolumevsPressureGraph
 %
-%  PURPOSE:
+%  PURPOSE: to generate the pv diagrams for the striling cycle and engine
 %
-%  INPUT:
+%  INPUT: 
+%       total: structure containing arrays for pressure and specific volume
 %
-%  OUTPUT:
+%  OUTPUT: NONE
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
@@ -29,8 +30,7 @@ R = 278;
 
 p = @(T,V) R*T./V;
 
-figure
-subplot(2,2,1)
+figure('name', 'Pv diagrams')
 plot(Vv1, (p(Tv1,Vv1))/1000,'b') 
 hold on
 plot(Vv1, (p(Tv2,Vv1))/1000,'b')

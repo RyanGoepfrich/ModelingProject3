@@ -1,4 +1,4 @@
-function [  ]  = torquePlots(theta2, total)
+function []  = torquePlots(theta2, total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: torquePlots
 %
@@ -15,9 +15,11 @@ function [  ]  = torquePlots(theta2, total)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
+%       a1: used to generate legend
+%       a2: used to generate legend
 %
 %  FUNCTIONS CALLED:
-%
+%       plot: used to plot arrays
 %
 %  START OF EXECUTABLE CODE
 
