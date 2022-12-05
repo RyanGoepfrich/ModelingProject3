@@ -9,7 +9,7 @@ function [torqueAvg]  = calcTorqueAvg(total,theta)
 %       theta: array of crank angles in radians
 %
 %  OUTPUT:
-%
+%   torqueAvg: average torque of the mechanism
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
 %  DATE: 12/1/22
