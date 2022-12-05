@@ -18,6 +18,10 @@
 %
 %  START OF EXECUTABLE CODE
 %
+clear
+clc
+close all
+
 theta = deg2rad(0): deg2rad(1):deg2rad(360); 
 theta2 = 0: 1: 360;
 C_R = 1.58;
@@ -65,23 +69,7 @@ disp(total.power2)
 close all
 
 specificvolumevsPressureGraph(total)
-
-subplot(2,2,2)
-plot(theta2,total.force)
-xlabel('Crank Angle [deg]')
-ylabel('Force [N]')
-xlim([0,360])
-title('Force vs. Crank Angle')
-
-subplot(2,2,3)
-plot(theta2, total.torque)
-yline(0)
-yline(total.torqueAvg, 'color', 'r')
-xlabel('Crank Angle [deg]')
-ylabel('Torque [Nm]')
-xlim([0,360])
-ylim([-25, 42])
-title('Torque vs. Crank Angle')
+torquePlots(theta2, total)
 
 %% Determine KE and I
 total.KE = calcKE(theta, total);
