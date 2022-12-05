@@ -63,23 +63,32 @@ disp(total.power2)
 
 %% Graphing Functions
 close all
+
 specificvolumevsPressureGraph(total)
 
-figure()
+subplot(2,2,2)
 plot(theta2,total.force)
+xlabel('Crank Angle [deg]')
+ylabel('Force [N]')
+xlim([0,360])
+title('Force vs. Crank Angle')
 
-figure('name', 'Torque vs. crank angle')
+subplot(2,2,3)
 plot(theta2, total.torque)
 yline(0)
 yline(total.torqueAvg, 'color', 'r')
-xlabel('Crank angle [deg]')
+xlabel('Crank Angle [deg]')
 ylabel('Torque [Nm]')
+xlim([0,360])
+ylim([-25, 42])
+title('Torque vs. Crank Angle')
 
 %% Determine KE and I
 total.KE = calcKE(theta, total);
 total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
 flywheel.diameter = calcD(flywheel);
+
 
 
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)

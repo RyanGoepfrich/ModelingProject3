@@ -30,16 +30,20 @@ R = 278;
 p = @(T,V) R*T./V;
 
 figure
+subplot(2,2,1)
 plot(Vv1, (p(Tv1,Vv1))/1000,'b') 
 hold on
 plot(Vv1, (p(Tv2,Vv1))/1000,'b')
 plot(Vv1(1)*[1 1], (p([Tv1(1) Tv2(end)],[1 1]*Vv1(1)))/1000, 'b')
 plot(Vv1(end)*[1 1], (p([Tv2(1) Tv1(end)],[1 1]*Vv1(end)))/1000, 'b')
 plot(total.specificvolume,(total.pressure)/1000);
+legend('Stirling Cycle','','','','Stirling Engine')
 hold off
 grid
-xlabel('v [m^3]')
-ylabel('P [kPa]')
+xlabel('Specific Volume [m^3]')
+ylabel('Pressure [kPa]')
+xlim([0.16,0.27])
+title({'Pressure vs. Specific Volume for';'Stirling Cycle & Stirling Engine'})
 
 
 
