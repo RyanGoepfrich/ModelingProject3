@@ -89,3 +89,13 @@ omega_check = (1/(2*pi))*trapz(theta3, omega2);
 figure('name', 'Rotational Velocity')
 plot(theta3, omega2)
 
+%% Varying Parameters anaylsis
+
+lowCR = 1;
+highCR = 2;
+total.CR = linspace(lowCR, highCR, 10);
+
+%for i=1:numel(total.CR)
+%     [total.varyingFlywheelDiam, total.varyingPower1, total.varyingPower2] = VaryingParameter(total.CR(i));
+%end
+
