@@ -63,7 +63,7 @@ total.power2 = PowerMethod2(total);
 %% Determine KE and I
 total.KE = calcKE(theta, total);
 total.cf = 0.002;
-flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
+flywheel.I = total.KE/(total.cf*((total.omegaAvg*2*pi/60)^2));
 flywheel.diameter = calcD(flywheel);
 
 flywheelDiam = flywheel.diameter;
