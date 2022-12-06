@@ -28,7 +28,7 @@ function [T]  = calcTorque(F_P, powerpiston)
 % Determine force vector acting on the crank
 F_P = -1.*F_P;
 F_43x = F_P.*real(powerpiston.crod.vector)./imag(powerpiston.crod.vector);
-F_32 = F_43x + F_P.*1i;
+F_32 = -F_43x + F_P.*1i;
 
 T = real(F_32).*imag(powerpiston.crank.vector) + imag(F_32).*real(powerpiston.crank.vector);
 end

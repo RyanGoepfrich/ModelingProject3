@@ -1,4 +1,4 @@
-function [  ]  = calcOmega(theta2, avg_torque)
+function []  = calcOmega(theta2, avg_torque, heightmax)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: calcOmega
 %
@@ -26,7 +26,7 @@ regenerator = regeneratorsetup();
 
 powerpiston = PosVelAccelAnalysis(powerpiston);
 displacer = PosVelAccelAnalysis(displacer);
-total.heightmax = hcalc(powerpiston,regenerator,C_R);
+total.heightmax = heightmax;
 
 powerpiston = VolumePowerPiston(powerpiston,displacer);
 displacer = VolumeDisplacer(displacer,total);
@@ -38,7 +38,7 @@ total.force = forcecalc(total,powerpiston);
 total.torque = calcTorque(total.force, powerpiston);
 
 
-T_0 = @(theta) ;
+T_0 = @(theta) total.torque;
 ode = @(theta, omega2) T_0/omega2;
 
 [theta, omega2] = ode45(ode);
