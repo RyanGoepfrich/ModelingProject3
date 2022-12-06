@@ -46,7 +46,8 @@ R = 287;
 
 p = @(T,V) R*T./V;
 
-figure('name', 'Pv diagrams')
+figure(1)
+subplot(2,2,1)
 plot(Vv1, (p(Tv1,Vv1))/1000,'b') 
 hold on
 plot(Vv1, (p(Tv2,Vv1))/1000,'b')
