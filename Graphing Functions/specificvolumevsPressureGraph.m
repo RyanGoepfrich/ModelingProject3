@@ -46,8 +46,7 @@ R = 287;
 
 p = @(T,V) R*T./V;
 
-figure('Name','Output Plots','NumberTitle','off');
-subplot(2,2,1)
+figure('Name','Pressure vs. Specific Volume for Stirling Cycle & Stirling Engine','NumberTitle','off');
 plot(Vv1, (p(Tv1,Vv1))/1000,'b') 
 hold on
 plot(Vv1, (p(Tv2,Vv1))/1000,'b')
