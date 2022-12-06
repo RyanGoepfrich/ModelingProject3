@@ -16,7 +16,7 @@ function [  ]  = omegaPlots(theta, omega)
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
 %
-%  FUNCTIONS CALLED:
+%  FUNCTIONS CALLED: NONE
 %
 %
 %  START OF EXECUTABLE CODE
