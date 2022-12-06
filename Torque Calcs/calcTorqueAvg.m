@@ -1,4 +1,4 @@
-function [torqueAvg]  = calcTorqueAvg(total,theta)
+function [torqueAvg,torqueAvg2]  = calcTorqueAvg(total,theta)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: calcTorqueAvg
 %
