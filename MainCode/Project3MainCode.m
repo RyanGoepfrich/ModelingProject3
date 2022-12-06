@@ -79,6 +79,11 @@ total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
 flywheel.diameter = calcD(flywheel);
 
-%% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
+%% Rotational Velocity Analysis
 
+ode = @(theta, omega2) torqueTheta(theta, total.torqueAvg, total.heightmax, total.mass) / omega2;
+[theta3, omega2] = ode45(ode, [0, theta(end)], total.omegaAvg);
+
+figure('name', 'Rotational Velocity')
+plot(theta3, omega2)
 
