@@ -90,25 +90,8 @@ cf_check = (max(omega2) - min(omega2))/total.omegaAvg;
 omegaPlots(theta3, omega2)
 
 %% Varying Parameters anaylsis
-
-total.lowCR = 1.1;
-total.highCR = 2;
-total.CR = linspace(total.lowCR, total.highCR, 10);
-
-
-for i=1:numel(total.CR)
-     [total.varyingFlywheelDiamCR(i), total.varyingPower1CR(i), total.varyingPower2CR(i)] = VaryingParameter(total.CR(i));
-end
-
-lowTHigh = 700;
-HighTHigh = 1100;
-total.varyingTemp = linspace(lowTHigh, HighTHigh, 200);
-
-for i=1:numel(total.varyingTemp)
-     [total.varyingFlywheelDiamTemp(i), total.varyingPower1Temp(i), total.varyingPower2Temp(i)] = VaryingTemp(total.varyingTemp(i));
-end
-
-PlotVaryingCR(total);
+varying = VaryingProperties();
+PlotVaryingParam(varying);
 
 
 
