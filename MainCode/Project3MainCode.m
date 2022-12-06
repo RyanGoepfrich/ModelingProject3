@@ -91,11 +91,14 @@ omegaPlots(theta3, omega2)
 
 %% Varying Parameters anaylsis
 
-lowCR = 1;
-highCR = 2;
-total.CR = linspace(lowCR, highCR, 10);
+total.lowCR = 1.1;
+total.highCR = 2;
+total.CR = linspace(total.lowCR, total.highCR, 10);
 
-%for i=1:numel(total.CR)
-%     [total.varyingFlywheelDiam, total.varyingPower1, total.varyingPower2] = VaryingParameter(total.CR(i));
-%end
+for i=1:numel(total.CR)
+     [total.varyingFlywheelDiam(i), total.varyingPower1(i), total.varyingPower2(i)] = VaryingParameter(total.CR(i));
+end
+
+PlotVaryingParameter(total);
+
 
