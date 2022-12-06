@@ -22,10 +22,11 @@ function [  ]  = omegaPlots(theta, omega)
 %  START OF EXECUTABLE CODE
 
 figure('name', 'rotational velocity vs. crank angle')
-a1 = plot(omega, theta);
-xlabel('Crank Angle [Rad]')
+a1 = plot(theta, omega);
+xlabel('Crank Angle [Radians]')
+xlim([0 2*pi])
 ylabel('Rotational Veloctiy [RPM]')
-a2 = yline(2000);
-legend([a1, a2], {'Rot. Velocity', 'Average Rot. Velocity'})
+a2 = yline(2000, 'color', 'r');
+legend([a1, a2], {'Rot. Velocity', 'Average Rot. Velocity'}, 'location', 'southeast')
 
 end
