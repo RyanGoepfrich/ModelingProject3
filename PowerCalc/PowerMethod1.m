@@ -21,7 +21,7 @@ function [power1,omega] = PowerMethod1(total)
 
 omega = 2000;                   % Average rotational velocity [rpm]
 
-work = trapz(total.specificvolume,total.pressure);
+work = trapz(total.volume,total.pressure);
 
 power1 = work*omega/60;
 end

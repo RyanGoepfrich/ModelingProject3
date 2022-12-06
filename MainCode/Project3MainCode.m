@@ -18,6 +18,11 @@
 %
 %  START OF EXECUTABLE CODE
 %
+
+close all
+clear
+clc
+
 theta = deg2rad(0): deg2rad(1):deg2rad(360); 
 theta2 = 0: 1: 360;
 C_R = 1.58;
@@ -73,6 +78,7 @@ ylabel('Force [N]')
 xlim([0,360])
 title('Force vs. Crank Angle')
 
+% Plotting Subplot of Crank Angle vs. 
 subplot(2,2,3)
 plot(theta2, total.torque)
 yline(0)
@@ -82,7 +88,6 @@ ylabel('Torque [Nm]')
 xlim([0,360])
 ylim([-25, 42])
 title('Torque vs. Crank Angle')
-title(tcl,'Plots')
 
 %% Determine KE and I
 total.KE = calcKE(theta, total);
@@ -90,9 +95,6 @@ total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
 flywheel.diameter = calcD(flywheel);
 
-
-
 %% DONT KNOW WHAT ELSE IS NEEDED (Will work on stuff)
-
 
 

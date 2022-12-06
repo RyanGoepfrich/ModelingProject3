@@ -22,6 +22,5 @@ function [VolumeTotal,SpecificVolume] = totalVolumeCalc(displacer,powerpiston,re
 
 VolumeTotal = displacer.volume+powerpiston.volume+regenerator.volume;
 SpecificVolume = VolumeTotal/total.mass;
-
 end
 
