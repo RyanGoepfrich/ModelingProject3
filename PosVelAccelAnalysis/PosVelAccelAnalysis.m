@@ -1,21 +1,27 @@
 function [slidermech] = PosVelAccelAnalysis(slidermech)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME: 
+%  FUNCTION NAME: PosVelAccelAnalysis
 %
-%  PURPOSE : 
+%  PURPOSE : determine the posistion, velocity, acceleration of the
+%  powerpiston
 %
-%  INPUT
+%  INPUT: 
+%   slidermech: structure containing the information for the slider
+%   mechanism that is being analyzed
 %
-%  OUTPUT
+%  OUTPUT:
+%   slidermech: structure containing updated information for the position
+%   of the slidermech
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Ryan Goepfrich
 %  DATE: 11/27/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES
-%
+%   S = posistion of the element being analyzed
+%   theta_S: the lead time of  the displacer in radians
 %  FUNCTIONS CALLED
-%
+%   deg2rad
 %  START OF EXECUTABLE CODE
 %
 theta_S = deg2rad(90);

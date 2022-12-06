@@ -1,12 +1,16 @@
 function [h] = hcalc(powerpiston,regenerator,C_R)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME:
+%  FUNCTION NAME: hcalc
 %
-%  PURPOSE:
+%  PURPOSE: Calculates the max height of the powerpiston
 %
 %  INPUT:
+%   powerpiston: structure containing information for the powerpiston
+%   regenerator: structure containing information for the regenerator
+%   C_R: compression ratio
 %
 %  OUTPUT:
+%   h: height of the powerpiston
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -14,9 +18,9 @@ function [h] = hcalc(powerpiston,regenerator,C_R)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
-%
+%   Area: surface area of the powerpiston
 %  FUNCTIONS CALLED:
-%
+%   none
 %  START OF EXECUTABLE CODE
 
  % Compression Ratio

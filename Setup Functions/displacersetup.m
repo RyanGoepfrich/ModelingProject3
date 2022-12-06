@@ -16,10 +16,19 @@ function [displacer] = displacersetup(powerpiston)
 %   
 %   displacer.crank.length = crank length of displacer
 %   displacer.crod.length= connecting rod length of displacer
+%   displacer.volume: volume of air above displacer (Placeholder value)
+%   displacer.crank.angle: CAD of the displacer in reference to the
+%   powerpiston
+%   displacer.diameter: diameter of the displacer
+%   dispacer.crank.vector: length of the displacer crank in terms of vector
+%   notation
+%   displacer.temp: temperature of the air above the displacer
+%   displacer.area: surface area of the displacer
+%   displacer.pressureBDC: pressure of the air above the displacer at BDC
 %   
 %  
 % FUNCTIONS CALLED
-%
+%   deg2rad
 %  START OF EXECUTABLE CODE
 %
 

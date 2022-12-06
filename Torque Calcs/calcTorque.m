@@ -16,9 +16,12 @@ function [T]  = calcTorque(F_P, powerpiston)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
+%       F_43x: the force acting on link 3 by link 4 in the x direction
+%       F_32: the force acting on link 2 by link 3 in complex form
 %
 %  FUNCTIONS CALLED:
-%
+%       real(): real portion of complex number
+%       imag(): imaginary portion of complex number
 %
 %  START OF EXECUTABLE CODE
 

@@ -17,7 +17,12 @@ function [powerpiston] = powerpistonsetup(theta)
 %   powerpiston.crank.length = crank length of power piston
 %   powerpiston.crod.length= connecting rod length
 %   powerpiston.crank.angle = angle of the crank for the power piston
-%   
+%   powerpiston.diameter = diameter of the power piston
+%   powerpiston.crank.vector = length of the crank attached to the power piston in vector coordinates 
+%   powerpiston.temp = temperature of the air above the powerpiston [K]
+%   powerpiston.pressureBDC = pressure of the air above powerpiston at BDC
+%   [Pa]
+%   powerpiston.area = surface area of the powerpiston 
 %  
 % FUNCTIONS CALLED
 %
