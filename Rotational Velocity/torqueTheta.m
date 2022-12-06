@@ -1,4 +1,4 @@
-function []  = calcOmega(theta2, avg_torque, heightmax)
+function []  = torqueTheta(theta2, avg_torque, heightmax)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: calcOmega
 %
