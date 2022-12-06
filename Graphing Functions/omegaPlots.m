@@ -21,6 +21,8 @@ function [  ]  = omegaPlots(theta, omega)
 %
 %  START OF EXECUTABLE CODE
 
+omega = omega.*60./(2*pi);
+
 figure('name', 'rotational velocity vs. crank angle')
 a1 = plot(theta, omega);
 xlabel('Crank Angle [Radians]')
