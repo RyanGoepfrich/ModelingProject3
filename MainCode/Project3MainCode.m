@@ -84,6 +84,8 @@ flywheel.diameter = calcD(flywheel);
 ode = @(theta, omega2) torqueTheta(theta, total.torqueAvg, total.heightmax, total.mass) / omega2;
 [theta3, omega2] = ode45(ode, [0, theta(end)], total.omegaAvg);
 
+omega_check = (1/(2*pi))*trapz(theta3, omega2);
+
 figure('name', 'Rotational Velocity')
 plot(theta3, omega2)
 
