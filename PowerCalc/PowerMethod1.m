@@ -26,7 +26,7 @@ function [power1,omega] = PowerMethod1(total)
 
 omega = 2000;                   % Average rotational velocity [rpm]
 
-work = trapz(total.specificvolume,total.pressure); %calculates the area under the P-v curve
+work = trapz(total.volume,total.pressure);
 
 power1 = work*omega/60; %calculates the power using the frequency of cycles
 end
