@@ -23,7 +23,7 @@ function [D]  = calcD(flywheel)
 %
 %  START OF EXECUTABLE CODE
 
-fun = @(D) D^4 - ((D-flywheel.thickness)^4) - ((32*flywheel.I)/(pi*flywheel.density*flywheel.width));
-D = fzero(fun, 1);
+fun = @(D) ((D/2)^4 - ((D/2)-flywheel.thickness)^4) - ((2*flywheel.I)/(pi*flywheel.density*flywheel.width));
+D = fzero(fun, 0.4);
 
 end
