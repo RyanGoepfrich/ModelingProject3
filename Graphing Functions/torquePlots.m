@@ -47,7 +47,7 @@ a2 = yline(total.torqueAvg, 'color', 'r');
 xlabel('Crank Angle [deg]')
 ylabel('Torque [Nm]')
 xlim([0,360])
-ylim([-25, 42])
+ylim([-32, 55])
 title('Torque vs. Crank Angle')
 legend([a2, a1], {'Average Torque', 'Engine Torque'})
 
