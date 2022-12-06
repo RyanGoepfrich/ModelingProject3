@@ -82,6 +82,7 @@ ylabel('Torque [Nm]')
 xlim([0,360])
 ylim([-25, 42])
 title('Torque vs. Crank Angle')
+title(tcl,'Plots')
 
 %% Determine KE and I
 total.KE = calcKE(theta, total);
