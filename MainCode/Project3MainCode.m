@@ -78,6 +78,7 @@ total.KE = calcKE(theta, total);
 total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*(total.omegaAvg^2));
 flywheel.diameter = calcD(flywheel);
+disp("The diameter of the flywheel is "+ flywheel.diameter + " m");
 
 %% Rotational Velocity Analysis
 
