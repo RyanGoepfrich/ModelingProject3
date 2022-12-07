@@ -29,9 +29,12 @@ function [varying]  = VaryingProperties( )
 %   varying.highTHigh: high temp bound of the high temperature region
 %   varying.varyingTemp: array containing temperature in which the
 %   parameters are varied for
-%   varying.varyingFlywheelDiamTemp: array of 
-%   varying.varyingPower1Temp:
-%   varying.varyingPower2Temp:
+%   varying.varyingFlywheelDiamTemp: array of flywheel diameters from
+%   varying the temperatures
+%   varying.varyingPower1Temp: array of the powers from method 1 based on
+%   different temperatures
+%   varying.varyingPower2Temp: array of the powers from method 2 based on
+%   different temperatures
 %
 %  FUNCTIONS CALLED:
 %   linspace

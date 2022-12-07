@@ -15,9 +15,18 @@ function [  ]  = omegaPlots(theta, omega)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
+%   a1: Plot of the rotational velocity vs CAD
+%   a2: Average velocity line at average rotational velocity
+%   omega: adjusted omega to frequency
 %
-%  FUNCTIONS CALLED: NONE
-%
+%  FUNCTIONS CALLED: 
+%   figure
+%   plot
+%   xlabel
+%   xlim
+%   ylabel
+%   yline
+%   legend
 %
 %  START OF EXECUTABLE CODE
 

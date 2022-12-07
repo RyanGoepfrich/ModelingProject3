@@ -1,21 +1,28 @@
 function []  = PlotVaryingParam(varying)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME:
+%  FUNCTION NAME: PlotVaryingParam
 %
-%  PURPOSE:
+%  PURPOSE: PLots graphs of the varying CR and High temperature in the
+%  stirling engine and their impacts on the flywheel diameter and the power output 
 %
 %  INPUT:
+%   varying: sturcture containing varying paraemters and their impacts
 %
-%  OUTPUT:
+%  OUTPUT: plots
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
-%
+%   none
 %  FUNCTIONS CALLED:
-%
+%   figure  
+%   subplot
+%   plot
+%   xlabel
+%   ylabel
+%   title
 %
 %  START OF EXECUTABLE CODE
 
@@ -30,12 +37,7 @@ subplot(2,1,2)
 plot(varying.CR, varying.varyingPower1CR);
 xlabel('Compression Ratio');
 ylabel('Power [W]')
-title('Compression Ratio vs Power (method 1)')
-
-%subplot(2,1,1)
-%plot(varying.CR, varying.varyingPower2);
-%xlabel('Compression Ratio');
-%ylabel('Power [W]');
+title('Compression Ratio vs Power')
 
 figure('Name', 'Changing High Temperature of Air','NumberTitle','off');
 subplot(2,1,1)
@@ -48,11 +50,7 @@ subplot(2,1,2)
 plot(varying.varyingTemp, varying.varyingPower1Temp);
 xlabel('High Temperature');
 ylabel('Power [W]')
-title('High Temperature vs Power (method 1)')
+title('High Temperature vs Power')
 
-%subplot(2,1,1)
-%plot(varying.varyingTemp, varying.varyingPower2Temp);
-%xlabel('High Temperature');
-%ylabel('Power [W]');
 end
 

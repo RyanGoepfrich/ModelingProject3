@@ -30,7 +30,7 @@ T_0 = total.torque - total.torqueAvg;
 cross = 0;
 thetas = [0 0];
 
-for m = 2:length(theta)
+for m = 2:length(theta) %determines theta o and f, by determining when normalized torque crosses zero
     if T_0(m - 1)*T_0(m) < 0
        cross = cross + 1;
        thetas(cross) = m;

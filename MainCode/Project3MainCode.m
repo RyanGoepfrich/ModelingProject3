@@ -1,23 +1,88 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: Project3MainCode
 %
-%  PURPOSE - 
+%  PURPOSE: Complete all delivarables for project 3 in which a Stirling
+%  Engine is studied
 %
-%  INPUT - 
+%  INPUT: none
 %
-%  OUTPUT - 
+%  OUTPUT: none
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  AUTHOR: Ryan Goepfrich   
-%  DATE: 11/29/22
+%  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
+%  DATE: 12/1/22
 %
-%  DESCRIPTION OF LOCAL VARIABLES
-% 
-%  
-% FUNCTIONS CALLED
+%  DESCRIPTION OF LOCAL VARIABLES:
+%   theta: array of all the CAD that the stirling engine goes through in
+%   one cycle
+%   C_R: Compression ratio of the striling engine
+%   powerpiston: structure that contains all neccesary information for the
+%   powerpiston
+%   displacer: structure that contains all the neccessary information for
+%   the displacer
+%   regenerator: structure that contains all the neccessary information for
+%   the regnerator
+%   flywheel: structure that contains all the neccessary information for
+%   the regenerator
+%   displacer.temp: sets the high temperature gasto the assigned value
+%   total.heightMax: max height of the piston inside engined
+%   total.mass: total mass of the gas inside the cylinder
+%   total.volume: total colume of gas inside the cylinder
+%   total.specificVolume: specific volume of the air inside the cylinder
+%   total.pressure: total pressure of the gas inside the cyliner - array
+%   total.torque: array of all the torques at each CAD
+%   total.force: array of all the forces on the piston head at each CAD
+%   total.torqueAvg: average torque acting on the crank shaft
+%   total.power1: power production of the stirling engine [W] - calcualted
+%   using trapz
+%   total.power2: power production of the stirling engine [W] - calculated
+%   using Wt
+%   total.KE: change in kinetic energy of the system
+%   total.cf: max allowable coefficient of fluctuation
+%   flywheel.I: moment of inertia of the flywheel
+%   flywheel.Diam: diameter of the flywheel
+%   varying: structure containing the varying parameters and their results
+%   total.omegaAvg2: average rotational velocity frequency
+%   omega_guess: initial guss of where the average rotational velocity is
+%   cf_check: coefficient of friction of the stirling engine
+%
+%  FUNCTIONS CALLED:
+%   deg2rad
+%   powerpistonsetup
+%   displacersetup
+%   regneratorsetup
+%   flywheelsetup
+%   hcalc
+%   PosVelAccelAnalysis
+%   VolumePowerPiston
+%   VolumeDisplacer
+%   massCalcPiston
+%   massCalcDisplacer
+%   totalMassCalc
+%   totalVolumeCalc
+%   pressureCalc
+%   forceCalc
+%   calctorque
+%   calctorqueAvg
+%   PowerMethod1
+%   PowerMethod2
+%   calcKE
+%   calcD
+%   VaryingParameters
+%   specificvolumevsPressureGraph
+%   torquePlots
+%   PlotVaryingParam
+%   omegaPlots
+%   fprintf
+%   disp
+%   torqueTheta
+%   ode45
+%   trapz
+%   min
+%   max
 %
 %  START OF EXECUTABLE CODE
-%
+
 
 close all
 clear
@@ -97,7 +162,8 @@ fprintf('\n\nProject 3 Stirling Engine Analysis Results:\n')
 disp('===============================================')
 fprintf('\nPower Output Using Method 1:       %.2f [W]', total.power1);
 fprintf('\nPower Output Using Method 2:       %.2f [W]', total.power2);
-fprintf('\nDiameter of the Flywheel:          %.2f [m]\n\n', flywheel.diameter);
+fprintf('\nDiameter of the Flywheel:          %.2f [m]', flywheel.diameter);
+fprintf('\nCoefficient of Fluctuation:        %.4f \n\n', cf_check);
 
 
 
