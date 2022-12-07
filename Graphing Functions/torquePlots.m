@@ -32,7 +32,7 @@ function []  = torquePlots(theta2, total)
 %
 %  START OF EXECUTABLE CODE
 
-figure('name', 'Force and Torque Plots')
+figure('Name', 'Force and Torque Plots','NumberTitle','off');
 subplot(2,1,1)
 plot(theta2,total.force)
 xlabel('Crank Angle [deg]')

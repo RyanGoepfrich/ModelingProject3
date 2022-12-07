@@ -22,7 +22,7 @@
 close all
 clear
 clc
-close all
+
 %%
 theta = deg2rad(0): deg2rad(1) :deg2rad(360); 
 theta2 = 0: 1: 360;
@@ -62,23 +62,12 @@ total.torqueAvg = calcTorqueAvg(total, theta);
 %% Power Calcs
 [total.power1,total.omegaAvg] = PowerMethod1(total);
 total.power2 = PowerMethod2(total);
-disp('Power1')
-disp(total.power1)
-disp('Power2')
-disp(total.power2)
-
-%% Graphing Functions
-close all
-
-specificvolumevsPressureGraph(total)
-torquePlots(theta2, total)
 
 %% Determine KE and I
 total.KE = calcKE(theta, total);
 total.cf = 0.002;
 flywheel.I = total.KE/(total.cf*((total.omegaAvg*2*pi/60)^2));
 flywheel.diameter = calcD(flywheel);
-disp("The diameter of the flywheel is "+ flywheel.diameter + " m");
 
 %% Rotational Velocity Analysis
 % Initial Guess to start convergance
@@ -93,12 +82,23 @@ while abs(omega_guess - total.omegaAvg2) > 0.1
     omega_guess = (1/(2*pi))*trapz(theta3, omega2);
     cf_check = (max(omega2) - min(omega2))/total.omegaAvg2;
 end
-    
-omegaPlots(theta3, omega2)
 
 %% Varying Parameters anaylsis
 varying = VaryingProperties();
+
+%% Graphing Functions for Final Deliverables
+specificvolumevsPressureGraph(total)
+torquePlots(theta2, total)
 PlotVaryingParam(varying);
+omegaPlots(theta3, omega2)
+
+%% Outputting Final Values to Command Window
+fprintf('\n\nProject 3 Stirling Engine Analysis Results:\n')
+disp('===============================================')
+fprintf('\nPower Output Using Method 1:       %.2f [W]', total.power1);
+fprintf('\nPower Output Using Method 2:       %.2f [W]', total.power2);
+fprintf('\nDiameter of the Flywheel:          %.2f [m]\n\n', flywheel.diameter);
+
 
 
 

@@ -19,7 +19,7 @@ function []  = PlotVaryingParam(varying)
 %
 %  START OF EXECUTABLE CODE
 
-figure('name', 'Changing Compression Ratio Plots')
+figure('Name', 'Changing Compression Ratio Plots','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.CR, varying.varyingFlywheelDiamCR);
 xlabel('Compression Ratio');
@@ -37,7 +37,7 @@ title('Compression Ratio vs Power (method 1)')
 %xlabel('Compression Ratio');
 %ylabel('Power [W]');
 
-figure('name', 'Changing High Temperature of air')
+figure('Name', 'Changing High Temperature of Air','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.varyingTemp, varying.varyingFlywheelDiamTemp);
 xlabel('High Temperature');

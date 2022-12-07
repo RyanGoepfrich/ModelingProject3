@@ -23,7 +23,7 @@ function [  ]  = omegaPlots(theta, omega)
 
 omega = omega.*60./(2*pi);
 
-figure('name', 'rotational velocity vs. crank angle')
+figure('Name','Rotational Velocity vs. Crank Angle','NumberTitle','off');
 a1 = plot(theta, omega);
 xlabel('Crank Angle [Radians]')
 xlim([0 2*pi])
