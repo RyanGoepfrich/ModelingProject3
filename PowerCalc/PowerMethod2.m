@@ -21,7 +21,7 @@ function power2 = PowerMethod2(total)
 %
 %  START OF EXECUTABLE CODE
 
-power2 = total.omegaAvg*total.torqueAvg;
+power2 = total.omegaAvg*total.torqueAvg/9.5488;
 
 end
 
