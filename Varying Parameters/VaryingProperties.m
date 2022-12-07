@@ -1,22 +1,42 @@
 function [varying]  = VaryingProperties( )
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  FUNCTION NAME:
+%  FUNCTION NAME: VaryingProperties
 %
-%  PURPOSE:
+%  PURPOSE: Varies two properties of the stirling engine to determine their
+%  effect on the power and flywheel diameter
 %
 %  INPUT:
 %
 %  OUTPUT:
+%   varying: structure containing the values for the varying compression
+%   ratio and High temperature region in the stirling engine
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
+%   varying.lowCR: low compression ratio that is being looked at
+%   varying.highCR: high compression ratio that is being looked at
+%   varying.CR: array of compression ratios that are being studied
+%   varying.varyingFlywheelDiamCR: an array of varying flywheel diameter
+%   caused by varying the Compression ratio
+%   varying.varyingPower1CR: varying power outputs caused by varying
+%   Compression ratios
+%   varying.varyingPower2CR: array of varraying power outputs from method 2
+%   caused by varying Compression ratio
+%   varying.lowTHigh: low temp range of the high temperature region
+%   varying.highTHigh: high temp bound of the high temperature region
+%   varying.varyingTemp: array containing temperature in which the
+%   parameters are varied for
+%   varying.varyingFlywheelDiamTemp: array of 
+%   varying.varyingPower1Temp:
+%   varying.varyingPower2Temp:
 %
 %  FUNCTIONS CALLED:
-%
-%
+%   linspace
+%   VaryingParameter
+%   
 %  START OF EXECUTABLE CODE
 
 varying.lowCR = 1.1;
