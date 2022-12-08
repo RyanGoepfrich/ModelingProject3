@@ -33,5 +33,7 @@ regenerator.temp = (900+300/2); % [K]
 regenerator.pressureBDC = 500*1000; % [K]
 regenerator.mass = (regenerator.pressureBDC*regenerator.volume)/(R*regenerator.temp);
 
+end
+
 
 

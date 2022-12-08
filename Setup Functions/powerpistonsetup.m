@@ -38,9 +38,5 @@ powerpiston.temp = 300; % [K]
 powerpiston.pressureBDC = 500*1000; % [Pa]
 powerpiston.area = pi*(powerpiston.diameter/2)^2;
 
-
-
-
-
 end
 
