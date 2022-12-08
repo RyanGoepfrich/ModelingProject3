@@ -30,7 +30,7 @@ figure('Name', 'Changing Compression Ratio Plots','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.CR, varying.varyingFlywheelDiamCR);
 xlabel('Compression Ratio');
-ylabel('Flywheel Diameter');
+ylabel('Flywheel Diameter [m]');
 title('Compression ratio vs Flywheel Diameter')
 
 subplot(2,1,2)
@@ -43,7 +43,7 @@ figure('Name', 'Changing High Temperature of Air','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.varyingTemp, varying.varyingFlywheelDiamTemp);
 xlabel('High Temperature');
-ylabel('Flywheel Diameter');
+ylabel('Flywheel Diameter [m]');
 title('High Temperature vs Flywheel Diameter')
 
 subplot(2,1,2)
