@@ -41,6 +41,7 @@ xlim([0,360])
 title('Force vs. Crank Angle')
 
 subplot(2,1,2)
+figure
 a1 = plot(theta2, total.torque);
 yline(0, 'color', 'k')
 a2 = yline(total.torqueAvg, 'color', 'r');
