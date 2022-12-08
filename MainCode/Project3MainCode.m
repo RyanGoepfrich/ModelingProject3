@@ -139,11 +139,17 @@ flywheel.diameter = calcD(flywheel);
 total.omegaAvg2 = total.omegaAvg*2*pi/60;
 omega_guess = 1.2*total.omegaAvg2;
 
+% Iterate rotational velocity analysis until average velocity meets
+% parameters
 while abs(omega_guess - total.omegaAvg2) > 0.1
+    % Initial guess
     omega_guess = (total.omegaAvg2 + omega_guess)/2;
+    
+    % Solve ODE
     ode = @(theta, omega2) torqueTheta(theta, total.torqueAvg, total.heightmax, total.mass) / (flywheel.I*omega2);
     [theta3, omega2] = ode45(ode, [0, theta(end)], omega_guess);
-
+    
+    % Check results 
     omega_guess = (1/(2*pi))*trapz(theta3, omega2);
     cf_check = (max(omega2) - min(omega2))/total.omegaAvg2;
 end
