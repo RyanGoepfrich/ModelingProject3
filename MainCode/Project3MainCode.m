@@ -88,7 +88,7 @@ close all
 clear
 clc
 
-%%
+%% 
 theta = deg2rad(0): deg2rad(1) :deg2rad(360); 
 theta2 = 0: 1: 360;
 C_R = 1.58;
