@@ -9,7 +9,7 @@ function [T]  = calcTorque(F_P, powerpiston)
 %       powerpiston: powerpiston structure
 %
 %  OUTPUT:
-%       T: array of torque values for each thetat
+%       T: array of torque values for each theta
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  AUTHOR: Luke MacKinnon, Ryan Goepfrich, Mitchel Medvec, Charlie Morain
@@ -30,6 +30,8 @@ F_P = -1.*F_P;
 F_43x = F_P.*real(powerpiston.crod.vector)./imag(powerpiston.crod.vector);
 F_32 = -F_43x + F_P.*1i;
 
+% Using force vectors to create an array of torque values for each value of
+% theta
 T = real(F_32).*imag(powerpiston.crank.vector) + imag(F_32).*real(powerpiston.crank.vector);
 end
 

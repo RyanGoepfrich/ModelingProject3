@@ -26,8 +26,13 @@ function [power1,omega] = PowerMethod1(total)
 
 omega = 2000;                   % Average rotational velocity [rpm]
 
+% Calculating work using trapz function. This will be used to calculate the
+% power output of the engine
 work = trapz(total.volume,total.pressure);
 
-power1 = work*omega/60; %calculates the power using the frequency of cycles
+% Calculating the power out put of the stirling engine using method 1
+% (integral of the P-V curve)
+power1 = work*omega/60;
+
 end
 

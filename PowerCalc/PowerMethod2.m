@@ -2,8 +2,8 @@ function power2 = PowerMethod2(total)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: PowerMethod2
 %
-%  PURPOSE: Calculates the power using the average rotational speed and the
-%  average torque
+%  PURPOSE: Calculates the power using the average rotational velocity and 
+%  the average torque
 %
 %  INPUT:
 %   total: structure containing all of the important calculations
@@ -21,6 +21,8 @@ function power2 = PowerMethod2(total)
 %
 %  START OF EXECUTABLE CODE
 
+% Calculating the power output of the Stirling engine using method 2
+% (product of the average rotational velocity and the average torque)
 power2 = total.omegaAvg*total.torqueAvg/9.5488;
 
 end
