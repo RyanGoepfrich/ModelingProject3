@@ -21,6 +21,8 @@ function [torqueAvg]  = calcTorqueAvg(total,theta)
 %
 %  START OF EXECUTABLE CODE
 
+% Calculating the average torque for 1 cycle to be used in needed
+% deliverables for this project
 torqueAvg = (1/(2*pi))*trapz(theta,total.torque);
 
 end
