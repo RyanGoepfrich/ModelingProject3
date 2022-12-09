@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  FUNCTION NAME: Project3MainCode
 %
-%  PURPOSE: Complete all delivarables for project 3 in which a Stirling
-%  Engine is studied
+%  PURPOSE: The purpose of this main function is to complete all 
+%  delivarables for project 3 in which a Stirling Engine is studied
 %
 %  INPUT: none
 %
@@ -228,7 +228,7 @@ function [  ]  = omegaPlots(theta, omega)
 %  DATE: 12/1/22
 %
 %  DESCRIPTION OF LOCAL VARIABLES:
-%   a1: Plot of the rotational velocity vs CAD
+%   a1: Plot of the rotational velocity vs crank angle
 %   a2: Average velocity line at average rotational velocity
 %   omega: adjusted omega to frequency
 %
@@ -243,8 +243,10 @@ function [  ]  = omegaPlots(theta, omega)
 %
 %  START OF EXECUTABLE CODE
 
+% Adjusting omega to frequency
 omega = omega.*60./(2*pi);
 
+% Plotting Rotational Velocity vs. Crank Angle
 figure('Name','Rotational Velocity vs. Crank Angle','NumberTitle','off');
 a1 = plot(theta, omega);
 xlabel('Crank Angle [Radians]')
@@ -288,31 +290,35 @@ function []  = PlotVaryingParam(varying)
 %
 %  START OF EXECUTABLE CODE
 
+% Creating Compression Ratio vs. Flywheel Diameter Plot
 figure('Name', 'Changing Compression Ratio Plots','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.CR, varying.varyingFlywheelDiamCR);
 xlabel('Compression Ratio');
 ylabel('Flywheel Diameter [m]');
-title('Compression ratio vs Flywheel Diameter')
+title('Compression ratio vs. Flywheel Diameter')
 
+% Creating Compression Ratio vs. Power Plot
 subplot(2,1,2)
 plot(varying.CR, varying.varyingPower1CR);
 xlabel('Compression Ratio');
 ylabel('Power [W]')
-title('Compression Ratio vs Power')
+title('Compression Ratio vs. Power')
 
+% Creating High Temperature vs. Flywheel Diameter Plot
 figure('Name', 'Changing High Temperature of Air','NumberTitle','off');
 subplot(2,1,1)
 plot(varying.varyingTemp, varying.varyingFlywheelDiamTemp);
 xlabel('High Temperature [K]');
 ylabel('Flywheel Diameter [m]');
-title('High Temperature vs Flywheel Diameter')
+title('High Temperature vs. Flywheel Diameter')
 
+% Creating High Temperature vs. Power Plot
 subplot(2,1,2)
 plot(varying.varyingTemp, varying.varyingPower1Temp);
 xlabel('High Temperature [K]');
 ylabel('Power [W]')
-title('High Temperature vs Power')
+title('High Temperature vs. Power')
 
 end
 
@@ -359,16 +365,20 @@ function []  = specificvolumevsPressureGraph(total)
 %
 %  START OF EXECUTABLE CODE
 
-
+% Creating arrays to be used later in graphing specific volume vs. pressure
 Tv1 = linspace(900, 900, length(total.specificvolume));
 Tv2 = linspace(300, 300, length(total.specificvolume));
 Vv1 = linspace(min(total.specificvolume), max(total.specificvolume), length(total.specificvolume));
 
+% Initializing a value for the universal gas constant
 R = 287;
 
-
+% Creating an anonymous function that links to the temp and volume,
+% assuming the idal gas law
 p = @(T,V) R*T./V;
 
+% Creating a pressure vs. specific volume for Stirling cycle & Stirling
+% engine
 figure('Name','Pressure vs. Specific Volume for Stirling Cycle & Stirling Engine','NumberTitle','off');
 plot(Vv1, (p(Tv1,Vv1))/1000,'b') 
 hold on
@@ -425,6 +435,7 @@ function []  = torquePlots(theta2, total)
 %
 %  START OF EXECUTABLE CODE
 
+% Creating a force vs. crank angle plot
 figure('Name', 'Force and Torque Plots','NumberTitle','off');
 subplot(2,1,1)
 plot(theta2,total.force)
@@ -433,6 +444,7 @@ ylabel('Force [N]')
 xlim([0,360])
 title('Force vs. Crank Angle')
 
+% Creating a torque vs. crank angle plot
 subplot(2,1,2)
 a1 = plot(theta2, total.torque);
 yline(0, 'color', 'k')
@@ -483,7 +495,7 @@ T_0 = total.torque - total.torqueAvg;
 cross = 0;
 thetas = [0 0];
 
-for m = 2:length(theta) %determines theta o and f, by determining when normalized torque crosses zero
+for m = 2:length(theta) % Determines theta o and f, by determining when normalized torque crosses zero
     if T_0(m - 1)*T_0(m) < 0
        cross = cross + 1;
        thetas(cross) = m;
@@ -528,6 +540,7 @@ function [slidermech] = massCalcDisplacer(slidermech)
 R = 287; % [J/kgK]
 y = length(slidermech.crank.angle);
 
+% Updating the values in the slidermech structure
 for n = 1:y 
     if (slidermech.crank.angle(n) == 0) || (slidermech.crank.angle(n) == deg2rad(360)) %Determines if the displacer is at BDC
     slidermech.mass = (slidermech.pressureBDC*slidermech.volume(n))/(R*slidermech.temp); %Calculates the mass of the air inside using ideal gas law
@@ -642,6 +655,7 @@ function [slidermech] = PosVelAccelAnalysis(slidermech)
 %   deg2rad
 %  START OF EXECUTABLE CODE
 %
+
 theta_S = deg2rad(90);
 
 slidermech.crod.angle = theta_S + asin((-slidermech.crank.length/slidermech.crod.length)*sin(slidermech.crank.angle-theta_S)); 
