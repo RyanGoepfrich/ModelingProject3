@@ -88,7 +88,7 @@ close all
 clear
 clc
 
-%% 
+%% Creates arrays of the CAD in radians, and then another in degrees
 theta = deg2rad(0): deg2rad(1) :deg2rad(360); 
 theta2 = 0: 1: 360;
 C_R = 1.58;
